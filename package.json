@@ -1,0 +1,24 @@
+{
+  "name": "custom-google-search",
+  "version": "1.0.0",
+  "description": "custom search with google search api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grdeveloper/custom-google-search.git"
+  },
+  "keywords": [
+    "custom",
+    "search",
+    "api"
+  ],
+  "author": "Grisha Petrosyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grdeveloper/custom-google-search/issues"
+  },
+  "homepage": "https://github.com/grdeveloper/custom-google-search#readme"
+}
