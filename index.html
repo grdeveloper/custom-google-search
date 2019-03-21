@@ -11,18 +11,57 @@
     <link rel="stylesheet" href="src/styles/index.css">
 </head>
 <body>
-<gcse:searchbox></gcse:searchbox>
-<gcse:searchresults></gcse:searchresults>
-<script>
-    (function() {
-        var cx = '011217051296872477442:3xg6ux94eos';
-        var gcse = document.createElement('script');
-        gcse.type = 'text/javascript';
-        gcse.async = true;
-        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(gcse, s);
-    })();
-</script>
+
+    <div class="custom-search">
+
+        <div class="custom-search__form">
+            <form name="search-form">
+                <div class="custom-search__form__input">
+                    <input type="text" name="search" placeholder="Search...">
+                </div>
+                <div class="custom-search__form__submit">
+                    <button type="submit" name="submit">
+                        Search
+                    </button>
+                </div>
+            </form>
+            <div class="custom-search__form__error"></div>
+        </div>
+
+        <div class="custom-search__results">
+
+            <div class="custom-search__results__img">
+                <div class="custom-search__results__img__label">
+                    <label>Image Result</label>
+                </div>
+
+                <div class="custom-search__results__img__container"></div>
+
+            </div>
+
+            <div class="custom-search__results__web">
+                <div class="custom-search__results__web__label">
+                    <label>Web Result</label>
+                </div>
+
+                <div class="custom-search__results__web__container"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./src/environment/environment.js"></script>
+    <script src="./src/utils/request.js"></script>
+    <script src="./src/utils/validate.js"></script>
+    <script src="./src/utils/classnames.js"></script>
+    <script src="./src/utils/store.js"></script>
+    <script src="./src/utils/createImage.js"></script>
+    <script src="./src/utils/createWeb.js"></script>
+    <script src="./src/utils/createPagination.js"></script>
+    <script src="./src/app/handlers.js"></script>
+    <script src="./src/app/index.js"></script>
+
 </body>
 </html>
