@@ -1,19 +1,24 @@
 (function (myApp, document) {
     'use strict';
 
-    myApp.createPagination = function (store) {
+    myApp.createPagination = function (store, page) {
         var itemsToShow = Math.ceil(store.length / myApp.ENV_LIMIT_TO);
-        var itemToStart = 1;
 
         var linkContainer = document.querySelector(myApp.elements.web);
         var pagesContainer = document.createElement('div');
         var list = document.createElement('ul');
 
-        for (var item = itemToStart; item < itemsToShow + itemToStart; item++) {
+        for (var item = 0; item < itemsToShow; item++) {
             var listItem = document.createElement('li');
 
-            listItem.setAttribute('data-key', item);
-            listItem.innerText = item;
+            listItem.setAttribute('data-key', item.toString());
+            listItem.innerText = (item + 1).toString();
+
+            if ((!page && item === 0)
+                || (page && page === item)) {
+                myApp.handlers.setActivePage(list, listItem, 'page-active');
+            }
+
             list.appendChild(listItem);
             list.addEventListener('click', myApp.handlers.handlePagination, false);
         }

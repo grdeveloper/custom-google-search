@@ -1,12 +1,17 @@
 (function (myApp, document) {
     'use strict';
 
-    myApp.createWebTab = function (store) {
+    myApp.createWebTab = function (store, page) {
         var linkContainer = document.querySelector(myApp.elements.web);
         var fragment = document.createDocumentFragment();
         linkContainer.innerHTML = '';
 
-        for (var i = 0; i < myApp.ENV_LIMIT_TO; i++) {
+        var count = page ? page * myApp.ENV_LIMIT_TO : 0;
+        var limit = (count + myApp.ENV_LIMIT_TO) > store.length
+            ? store.length
+            : count + myApp.ENV_LIMIT_TO;
+
+        for (var i = count; i < limit; i++) {
             var currentItem = store[i];
 
             var linkWrapper = document.createElement('div');

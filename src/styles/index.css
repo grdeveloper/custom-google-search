@@ -19,6 +19,10 @@ body {
     box-sizing: border-box;
 }
 
+:root {
+    --main-color: dodgerblue;
+}
+
 .custom-search {
     padding: 30px;
 }
@@ -49,6 +53,11 @@ body {
 
 .custom-search__results {
     margin-top: 30px;
+    display: block;
+}
+
+.result-hide {
+    display: none;
 }
 
 .custom-search__results__web,
@@ -86,7 +95,7 @@ body {
 .custom-search__results__img__container div{
     display: inline-block;
     width: 48%;
-    height: 250px;
+    height: 217px;
     margin: 1%;
 }
 
@@ -96,17 +105,32 @@ body {
 }
 
 .custom-search__results__web__container div a{
-    color: dodgerblue;
+    color: var(--main-color);
 }
 
 .custom-search__results__web__container div a, h5 {
     font-size: 18px;
 }
 
+.custom-search__results__web__container div h5 {
+    margin: 15px 0;
+}
+
 .pages {
-    align-items: center;
+    padding: 5px 100px;
 }
 
 .pages ul{
     list-style-type: none;
+}
+
+.pages ul li {
+    display: inline;
+    margin: 0 5px;
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+.page-active {
+    text-decoration: underline;
 }
