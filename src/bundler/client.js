@@ -5,14 +5,18 @@
         environment: [
             './src/environment/environment.js'
         ],
+        components: [
+            './src/components/image.component.js',
+            './src/components/pagination.component.js',
+            './src/components/web.component.js'
+        ],
+        store: [
+            './src/store/store.js'
+        ],
         utils: [
             './src/utils/classnames.js',
-            './src/utils/createImage.js',
-            './src/utils/createPagination.js',
-            './src/utils/createWeb.js',
             './src/utils/request.js',
-            './src/utils/store.js',
-            './src/utils/validate.js',
+            './src/utils/validate.js'
         ],
         app: [
             './src/app/handlers.js',
