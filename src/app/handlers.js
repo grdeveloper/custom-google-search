@@ -57,11 +57,15 @@
         },
 
         handlePagination: function (event) {
-            var page = parseInt(event.target.dataset['key'], 10);
+            var target = event.target;
+            var page = parseInt(target.dataset['key'], 10);
+            if (target.classList.contains('page-active')) {
+                return;
+            }
 
             myApp.handlers.setActivePage(
-                event.target.parentElement,
-                event.target,
+                target.parentElement,
+                target,
                 'page-active'
             );
 
