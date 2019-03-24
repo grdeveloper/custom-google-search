@@ -1,6 +1,12 @@
 (function (myApp, document) {
     'use strict';
 
+    /**
+     * Structures and enlargers DOM tree with images from the store
+     *
+     * @param {store} store - Store of the application containing the search result
+     * @param {number | undefined} page - The current page to load the image results
+     */
     myApp.createImageTab = function (store, page) {
         var imageContainer = document.querySelector(myApp.elements.image);
         var fragment = document.createDocumentFragment();

@@ -1,6 +1,11 @@
 (function (myApp) {
     'use strict';
 
+    /**
+     * Handles the main XML HTTP request
+     *
+     * @returns {XMLHttpRequest} An instance of XML HTTP request
+     */
     myApp.xmlHttpRequest = function() {
         if (window.XMLHttpRequest) {
             return new XMLHttpRequest();

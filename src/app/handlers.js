@@ -2,6 +2,13 @@
     'use strict';
 
     myApp.handlers = {
+
+        /**
+         * Makes XML HTTP call to retrieve the search results
+         *
+         * @param {string} value - Input term to search
+         * @returns {XMLHttpRequestResponseType} JSON object for the result
+         */
         handleSubmit: function (value) {
             var request = myApp.xmlHttpRequest();
             var method = 'GET';
@@ -17,6 +24,11 @@
             request.send(null);
         },
 
+        /**
+         * Handles response from XML HTTP call: shows either the errorMessage or the result
+         *
+         * @param {XMLHttpRequestResponseType} req - Response result
+         */
         onReadyStateChange: function (req) {
             var errorForm = document.querySelector(myApp.elements.error);
             var resultForm = document.querySelector(myApp.elements.result);
@@ -43,6 +55,12 @@
             }
         },
 
+        /**
+         * Adds appropriate error className and text
+         *
+         * @param {HTMLElement} element - Element to show in case of error
+         * @param {string} message - Error message to show
+         */
         handleError: function (element, message) {
             var errorClass = 'show-display';
 
@@ -50,12 +68,23 @@
             myApp.manageErrorClassNames(element, errorClass);
         },
 
+        /**
+         * Construct DOM with the search result
+         *
+         * @param {store} store - Store containing the application state of results
+         * @param {number} page - Page number to navigate
+         */
         handleSearchPaint:  function (store, page) {
             myApp.createImageTab(store, page);
             myApp.createWebTab(store, page);
             myApp.createPagination(store, page);
         },
 
+        /**
+         * Marks clicked page item as active loading the page
+         *
+         * @param {MouseEvent} event - Click event fired in the pagination
+         */
         handlePagination: function (event) {
             var target = event.target;
             var page = parseInt(target.dataset['key'], 10);
@@ -72,6 +101,13 @@
             myApp.handlers.handleSearchPaint(myApp.store, page);
         },
 
+        /**
+         * Add active className to the current page removing the old one
+         *
+         * @param {HTMLCollection} collection - Pages list
+         * @param {HTMLLIElement} element - Selected page to navigate
+         * @param {string} className - Active className for the current page
+         */
         setActivePage: function (collection, element, className) {
             for (var i = 0; i < collection.childElementCount; i++) {
                 if (collection.children[i].classList.contains(className)

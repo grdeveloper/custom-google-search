@@ -1,6 +1,12 @@
 (function (myApp, document) {
     'use strict';
 
+    /**
+     * Structures and enlargers DOM tree with web info from the store
+     *
+     * @param {store} store - Store of the application containing the search result
+     * @param {number | undefined} page - The current page to load the web results
+     */
     myApp.createWebTab = function (store, page) {
         var linkContainer = document.querySelector(myApp.elements.web);
         var fragment = document.createDocumentFragment();

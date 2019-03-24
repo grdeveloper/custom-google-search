@@ -1,6 +1,12 @@
 (function (myApp, document) {
     'use strict';
 
+    /**
+     * Structures and enlargers DOM tree with pagination
+     *
+     * @param {store} store - Store of the application containing the search result
+     * @param {number | undefined} page - The current page to set as active
+     */
     myApp.createPagination = function (store, page) {
         var itemsToShow = Math.ceil(store.length / myApp.ENV_LIMIT_TO);
 
