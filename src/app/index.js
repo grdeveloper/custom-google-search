@@ -1,19 +1,19 @@
 (function (myApp, document) {
     'use strict';
 
-    myApp.elements = {
+    myApp.elements = Object.freeze({
         form: 'search-form',
         input: 'search',
         result: '.custom-search__results',
         error: '.custom-search__form__error',
         image: '.custom-search__results__img__container',
         web: '.custom-search__results__web__container'
-    };
+    });
 
-    myApp.errorMessages = {
+    myApp.errorMessages = Object.freeze({
         empty: 'Please, specify the search term...',
         badRequest: 'Ooops, something went wrong'
-    };
+    });
 
     myApp.errorState = false;
 

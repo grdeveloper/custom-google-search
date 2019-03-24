@@ -1,7 +1,7 @@
 (function (appFiles) {
     'use strict';
 
-    appFiles.files = {
+    appFiles.files = Object.freeze({
         environment: [
             './src/environment/environment.js'
         ],
@@ -22,5 +22,5 @@
             './src/app/handlers.js',
             './src/app/index.js'
         ]
-    };
+    });
 })(window.appFiles || (window.appFiles = {}));
